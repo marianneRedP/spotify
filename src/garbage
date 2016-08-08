@@ -1,0 +1,41 @@
+exports.fetchArtists = (url, artists) => {
+  const data = _.map(artists, (id) => {
+    fetch(`${url}${id}`)
+    .then(res => res.json())
+    .then(json => console.log(json.name));
+    }
+  );
+};
+
+
+const artists = [
+  '7kZrDJdqo62iZD6B2UEu7D',
+  '26dSoYclwsYLMAKD3tpOr4',
+  '4Z8W4fKeB5YxbusRsdQVPb',
+  '4ksCwAPgMi8rkQwwR3nMos',
+  '1dfeR4HaWDbWqFHLkxsg1d',
+  '0YC192cP3KPCRWx8zr8MfZ',
+  '4dpARuHxo51G3z768sgnrY',
+  '1uNFoZAHBGtllmzznpCI3s',
+  '0C8ZW7ezQVs4URX5aX7Kqx',
+  '4Rxn7Im3LGfyRkY2FlHhWi',
+  '6S2OmqARrzebs0tKUEyXyp',
+  '7rPQ2z1ji1ctJ6oGYBAo6M',
+  '6G9bygHlCyPgNGxK2l3YdE',
+  '3SYGWAHCe31oykdeUPpoJp',
+  '3AoFRPmkjP1WTi2Zu7gbZV',
+  '3IcF2f5vEkY6HPQfLlQDlw',
+  '1JfkqBTXs6VC3JZ7RJNu7h',
+  '4lujXse2GVoN3RoTG3ZxZC',
+  '3KGnRdVPGnRbL4oVSG7kFc',
+  '4FpWLDzdJjx5kjgdvacqmY',
+];
+
+
+
+const fetchArtists = (callback) => (
+    fetch(urlArtists + ids)
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .then(json => (callback(null, json)))
+);
